@@ -1,0 +1,16 @@
+<p>Cities</p>
+
+<ng-container *ngFor="let city of Cities">
+    <app-city-detail [TheCity]="city" (remove)="removeItem($event)"></app-city-detail>
+</ng-container>
+
+<button *ngIf="!showAdd" (click)="showAddForm()">Show Add Form</button>
+
+<div *ngIf="showAdd">
+    <h2>Add City</h2>
+    Name: <input type="text" [(ngModel)]="NewName" /> <br/>
+    State: <input type="text" [(ngModel)]="NewState" /> <br/>
+    Population: <input type="number" [(ngModel)]="NewPopulation" /> <br/>
+    <button (click)="add()">Add</button>
+    <button (click)="cancel()">Cancel</button>
+</div>

@@ -1,0 +1,22 @@
+Welcome to Angular2 App!
+
+<h1>Cities</h1>
+<div *ngFor="let city of cities">
+  <!-- Name: {{city.name}} <br/>
+    State: {{city.state}} <br/>
+    Population: {{city.population}} -->
+    <app-city [TheCity]="city"></app-city>
+
+</div>
+<br/>
+
+<button (click)="showForm()">Show Add City Form</button>
+<div *ngIf="formShowing==true">
+  <h2>Add City</h2>
+  Name: <input type="text" [(ngModel)]="newCity.name" /> <br/>
+  State: <input type="text" [(ngModel)]="newCity.state"/> <br/>
+  Population: <input type="number" [(ngModel)]="newCity.population"/> <br/>
+  <button (click)="addCity()">Add</button>
+  <button (click)="cancelAdd()">Cancel</button>
+</div>
+

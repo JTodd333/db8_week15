@@ -1,0 +1,13 @@
+<button style="display:block; margin: 0 auto;" (click)="showForm()">+ New Thought</button> <br/>
+<div *ngIf="formShowing">
+    Title: <input type="text" [(ngModel)]="newPost.title" />
+    Thought:<input type="text" [(ngModel)]="newPost.thought" /> <br/>
+    <button (click)="addPost()">Add</button>
+    <button (click)="cancel()">Cancel</button>
+</div> <br/>
+
+
+<ng-container *ngFor="let post of Posts.reverse()">
+    <app-single-post (delete)="deletePost($event)" [ThePost]="post"></app-single-post>
+</ng-container>
+
