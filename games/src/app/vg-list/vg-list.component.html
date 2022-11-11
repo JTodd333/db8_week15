@@ -1,0 +1,17 @@
+<div>
+    <ng-container *ngFor="let game of GameSrv.get()">
+        <app-vg-detail [TheGame]="game" (remove)="removeGame($event)"></app-vg-detail>
+    </ng-container>
+
+   
+</div>
+
+<button *ngIf="!showAdd" (click)="showAddForm()"><strong>Add Game</strong></button>
+<div *ngIf="showAdd">
+<h4>Add New Game</h4>
+Title: <input type="text" [(ngModel)]="newTitle" /> <br/>
+Year: <input type="text" [(ngModel)]="newYear" /> <br/>
+<input type="checkbox" [(ngModel)]="newConsole" /> Console Game? <br/>
+<button (click)="addGame()">Add</button>
+<button (click)="cancelAdd()">Cancel</button>
+</div>

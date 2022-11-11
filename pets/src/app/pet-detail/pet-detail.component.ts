@@ -9,7 +9,7 @@ import { Pet } from '../pet';
 })
 export class PetDetailComponent implements OnInit {
 
-	// Manually add Input, Putput, and Event Emittoer
+	// Manually add Input, Output, and Event Emittoer
 	// 		to the first import
 	// This component will manage a single instance of Pet.
 	// So we need an instance of Pet.

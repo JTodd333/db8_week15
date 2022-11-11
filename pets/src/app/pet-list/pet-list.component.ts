@@ -21,7 +21,7 @@ export class PetListComponent implements OnInit {
 
   // We'll create a list and temporarily put
   // test data in it. But then after we see it;s
-  // working for displayig it, we will remove
+  // working for displaying it, we will remove
   // the test data.
 
   // Then we'll add the view for displaying them.
